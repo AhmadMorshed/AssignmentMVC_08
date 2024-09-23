@@ -1,0 +1,30 @@
+﻿@model RoleViewModel
+@{
+    ViewData["Title"] = "Details";
+
+}
+<h1>
+   Edit Role 
+</h1>
+<br />
+<br />
+
+<div>
+    <div class="row">
+        <div class="col-6">
+            <form asp-action="Update" asp-controller="Role">
+                <input hidden asp-for="Id" />
+
+            
+    <partial name="PartialViews/DetailDeletePartiaView" model="@Model" />
+    <div class="my-3">
+        <a class="btn btn-info" asp-action="AddOrRemoveUsers" asp-controller="Roles" asp-route-roleId="@Model.Id">Add Or Remove Users</a>
+</div>
+
+<div>
+    <a asp-action="Update" asp-route-id="Id">Edit</a>
+    <a asp-action="Index">Back to List</a>
+    </div>
+    </form>
+    </div>
+    </div>
